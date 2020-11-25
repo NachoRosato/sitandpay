@@ -1,15 +1,15 @@
 <?php
-//controller/listaempleados
+//controller/listamenus
 require '../fw/fw.php';
 require '../models/Menus.php';
-require '../views/ListaMenus.php';
+require '../views/VistaMenu.php';
 
 $me = new Menus();
-$menus = $me->getTodos();
+$todos = $me->getTodos();
 
-$e = new ListaMenus();
-$e->menus = $menus;
-$e->render();
 
+$v = new VistaMenu();
+$v->menus = $todos;
+$v->render();
 
 ?>

@@ -1,7 +1,7 @@
 <?php
 
-class ListaMenus extends View{
-    public $menus;
+class VistaMenu extends View {
+    public $menus; 
     }
 
 ?>

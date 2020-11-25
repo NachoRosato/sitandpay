@@ -14,7 +14,7 @@ class Database {
     }
 
     private function connect() {
-        $this->cn = mysqli_connect("localhost", "root", "", "empresa");
+        $this->cn = mysqli_connect("localhost", "root", "", "sitandpay");
     }
 
     public function query($q) {
