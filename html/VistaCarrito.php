@@ -4,43 +4,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito</title>
-</head>
+    <title>Sit and Pay</title>
 
-<body>
-    <h1>Pedidos</h1>
-    
-    <?php foreach ($this->menus as $menu) { ?>
-                  
-        
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/popper.min.js">
+    <link rel="stylesheet" href="../css/styleMenu.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
-
-    <?php } ?>
-
-    <div id="test1">
-
-    </div>
-
-        <button onclick="test()"> PRUEBA </button>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
+
+<body>
+    <a href="../controllers/altapagos.php" class="btn-flotante">PAGAR</a>
+    <a href="../controllers/listamenus.php" class="btn-flotante2">VOLVER</a>
+
+    <nav class="navbar navbar-dark bg-dark d-flex">
+        <a class="navbar-brand" href="#">
+            <img src="../imgs/sitandpaylogo.png" class="d-inline-block align-top text-right" alt="">
+        </a>
+        <span class="text-white bg-dark">© 2020</span>
+    </nav>
+
+    <div class="container-fluid" id="publi">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="../imgs/food1.jpg" class="d-block w-100" alt="..">
+                </div>
+                <div class="carousel-item">
+                    <img src="../imgs/food2.jpg" class="d-block w-100" alt="..">
+                </div>
+                <div class="carousel-item">
+                    <img src="../imgs/food3.jpg" class="d-block w-100 h-10" alt="..">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Descrip.</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Cant.</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($this->menus as $me) { ?>
+                <tr>
+                    <th scope="row">1</th>
+                    <td><?= $me['nombre']; ?></td>
+                    <td><?= $me['descripcion']; ?></td>
+                    <td>$<?= $me['precio']; ?></td>
+                </tr>
+            <?php } ?>
+            
+        </tbody>
+    </table>
+    <! -- ANALIZAR FOOTER -->
+        <div>
+            <footer>
+                © 2020
+            </footer>
+        </div>
+
+
 </body>
 <script src="../script.js"></script>
 <script>
-    function test() {
-
-        const lista = document.getElementById("test1");
-        const row = 
-        lista.appendChild("saraza");
-
-       
-
-
-
-
-    }
+    $(function() {
+        $('.example-popover').popover({
+            container: 'body'
+        })
+    })
 </script>
+
 </html>

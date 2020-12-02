@@ -5,19 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sit and Pay</title>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/popper.min.js">
     <link rel="stylesheet" href="../css/styleMenu.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
 
 <body>
-    <a href="#" class="btn-flotante">Ver Pedido</a>
+    <a href="../controllers/listacarrito.php" class="btn-flotante">Ver Pedido</a>
 
     <nav class="navbar navbar-dark bg-dark d-flex">
         <a class="navbar-brand" href="#">
             <img src="../imgs/sitandpaylogo.png" class="d-inline-block align-top text-right" alt="">
         </a>
-        <span class="text-white bg-dark">COMPLETAR</span>
+        <span class="text-white bg-dark">© 2020</span>
     </nav>
 
     <div class="container-fluid" id="publi">
@@ -48,39 +55,87 @@
             </a>
         </div>
     </div>
+
     <div class="d-flex bd-highlight">
-        <button type="button" class="btn btn-info btn-sm p-3 flex-fill bd-highlight" value="1">Bebidas</button>
-        <button type="button" class="btn btn-info btn-sm p-3 flex-fill bd-highlight" value="2">Principal</button>
-        <button type="button" class="btn btn-info btn-sm p-3 flex-fill bd-highlight" value="3">Postres</button>
+        <button type="button" class="btn btn-info btn-sm p-3 flex-fill bd-highlight" data-toggle="collapse" href="#mostrarForm1" aria-expanded="false" aria-controls="mostrarForm1">Bebidas</button>
+        <button type="button" class="btn btn-info btn-sm p-3 flex-fill bd-highlight" data-toggle="collapse" href="#mostrarForm2" aria-expanded="false" aria-controls="mostrarForm2">Principal</button>
+        <button type="button" class="btn btn-info btn-sm p-3 flex-fill bd-highlight" data-toggle="collapse" href="#mostrarForm3" aria-expanded="false" aria-controls="mostrarForm3">Postres</button>
     </div>
 
     <! -- ACA TRAEMOS LOS MENUS -->
         <h2 class="text-center">ARMA TU MENU ;)</h2>
-        <!-- controlador slider -->
-        <div id="swiper-menus" class="swiper-container">
-            <!-- contenido wrapper -->
-            <div class="swiper-wrapper">
-                <!-- Slides -->
-                <?php foreach ($this->menus as $m) { ?>
-                    <label for=""><?= $m['nombre']; ?> </label>
-                    <label for=""><?= $m['precio']; ?></label>
-                    <button type="button" class="btn btn-primary btn-sm" onclick="agregarMenu('<?= $m['id_menu']; ?>')">Agregar</button>
-                <?php } ?>
-            </div>
-        </div>
+        <? echo $_SESSION['listadepedidos']; ?>
+        <div class="collapse" id="mostrarForm3">
+            <?php foreach ($this->menus as $m) { ?>
 
+                <?php if ($m['categoria'] == 3) { ?>
+                    <form action="" method="post" class="form-inline">
+                        <div class="form-group mb-2">
+                            <label for="nombre" class="sr-only">Nombre</label>
+                            <input type="text" readonly class="form-control-plaintext" id="nombre" value="<?= $m['nombre']; ?>">
+                        </div>
+                        <div class="form-group mx-sm-3 mb-2">
+                            <label for="precio" class="sr-only">Precio</label>
+                            <input type="text" readonly class="form-control-plaintext" id="precio" data-toggle="popover" title="Popover Header" data-content="Some content inside the popover"value="$ <?= $m['precio']; ?>">
+                            <input type="hidden" name="menuid" value="<?= $m['id_menu']; ?>">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-sm mb-2 form-inline">Agregar</button>
+                    </form>
+                <?php } ?>
+            <?php } ?>
+        </div>
+        <div class="collapse" id="mostrarForm2">
+            <?php foreach ($this->menus as $m) { ?>
+                <?php if ($m['categoria'] == 2) { ?>
+                    <form action="" method="post" class="form-inline">
+                        <div class="form-group mb-2">
+                            <label for="nombre" class="sr-only">Nombre</label>
+                            <input type="text" readonly class="form-control-plaintext" id="nombre" value="<?= $m['nombre']; ?>">
+                        </div>
+                        <div class="form-group mx-sm-3 mb-2">
+                            <label for="precio" class="sr-only">Precio</label>
+                            <input type="text" readonly class="form-control-plaintext" id="precio" value="$ <?= $m['precio']; ?>">
+                            <input type="hidden" name="menuid" value="<?= $m['id_menu']; ?>">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-sm mb-2 form-inline">Agregar</button>
+                    </form>
+                <?php } ?>
+            <?php } ?>
+        </div>
+        <div class="collapse" id="mostrarForm1">
+            <?php foreach ($this->menus as $m) { ?>
+                <?php if ($m['categoria'] == 1) { ?>
+                    <form action="" method="post" class="form-inline">
+                        <div class="form-group mb-2">
+                            <label for="nombre" class="sr-only">Nombre</label>
+                            <input type="text" readonly class="form-control-plaintext" id="nombre" value="<?= $m['nombre']; ?>">
+                        </div>
+                        <div class="form-group mx-sm-3 mb-2">
+                            <label for="precio" class="sr-only">Precio</label>
+                            <input type="text" readonly class="form-control-plaintext" id="precio" value="$ <?= $m['precio']; ?>">
+                            <input type="hidden" name="menuid" value="<?= $m['id_menu']; ?>">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-sm mb-2 form-inline">Agregar</button>
+                    </form>
+                <?php } ?>
+            <?php } ?>
+        </div>
         <! -- ANALIZAR FOOTER -->
             <div>
-                <footer class="footer">
-                    <div class="footer-copyright text-center py-3">© 2020 Ignacio Rosato:
-                    </div>
+                <footer>
+                    © 2020
                 </footer>
             </div>
 
-            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-            <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
 </body>
 <script src="../script.js"></script>
+<script>
+    $(function() {
+        $('.example-popover').popover({
+            container: 'body'
+        })
+    })
+</script>
+
 </html>
