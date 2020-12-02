@@ -72,11 +72,11 @@
                     <form action="" method="post" class="form-inline">
                         <div class="form-group mb-2">
                             <label for="nombre" class="sr-only">Nombre</label>
-                            <input type="text" readonly class="form-control-plaintext" id="nombre" value="<?= $m['nombre']; ?>">
+                            <input type="text" readonly class="form-control-plaintext font-weight-bold" id="nombre" value="<?= $m['nombre']; ?>">
                         </div>
                         <div class="form-group mx-sm-3 mb-2">
                             <label for="precio" class="sr-only">Precio</label>
-                            <input type="text" readonly class="form-control-plaintext" id="precio" data-toggle="popover" title="Popover Header" data-content="Some content inside the popover"value="$ <?= $m['precio']; ?>">
+                            <input type="text" readonly class="form-control-plaintext font-weight-bold" id="precio" data-toggle="popover" title="Popover Header" data-content="Some content inside the popover"value="$ <?= $m['precio']; ?>">
                             <input type="hidden" name="menuid" value="<?= $m['id_menu']; ?>">
                         </div>
                         <button type="submit" class="btn btn-primary btn-sm mb-2 form-inline">Agregar</button>
@@ -90,11 +90,11 @@
                     <form action="" method="post" class="form-inline">
                         <div class="form-group mb-2">
                             <label for="nombre" class="sr-only">Nombre</label>
-                            <input type="text" readonly class="form-control-plaintext" id="nombre" value="<?= $m['nombre']; ?>">
+                            <input type="text" readonly class="form-control-plaintext font-weight-bold" id="nombre" value="<?= $m['nombre']; ?>">
                         </div>
                         <div class="form-group mx-sm-3 mb-2">
                             <label for="precio" class="sr-only">Precio</label>
-                            <input type="text" readonly class="form-control-plaintext" id="precio" value="$ <?= $m['precio']; ?>">
+                            <input type="text" readonly class="form-control-plaintext font-weight-bold" id="precio" value="$ <?= $m['precio']; ?>">
                             <input type="hidden" name="menuid" value="<?= $m['id_menu']; ?>">
                         </div>
                         <button type="submit" class="btn btn-primary btn-sm mb-2 form-inline">Agregar</button>
@@ -108,11 +108,11 @@
                     <form action="" method="post" class="form-inline">
                         <div class="form-group mb-2">
                             <label for="nombre" class="sr-only">Nombre</label>
-                            <input type="text" readonly class="form-control-plaintext" id="nombre" value="<?= $m['nombre']; ?>">
+                            <input type="text" readonly class="form-control-plaintext font-weight-bold" id="nombre" value="<?= $m['nombre']; ?>">
                         </div>
                         <div class="form-group mx-sm-3 mb-2">
                             <label for="precio" class="sr-only">Precio</label>
-                            <input type="text" readonly class="form-control-plaintext" id="precio" value="$ <?= $m['precio']; ?>">
+                            <input type="text" readonly class="form-control-plaintext font-weight-bold" id="precio" value="$ <?= $m['precio']; ?>">
                             <input type="hidden" name="menuid" value="<?= $m['id_menu']; ?>">
                         </div>
                         <button type="submit" class="btn btn-primary btn-sm mb-2 form-inline">Agregar</button>
@@ -130,12 +130,4 @@
 
 </body>
 <script src="../script.js"></script>
-<script>
-    $(function() {
-        $('.example-popover').popover({
-            container: 'body'
-        })
-    })
-</script>
-
 </html>

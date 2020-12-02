@@ -64,19 +64,34 @@
                 <th scope="col">Nombre</th>
                 <th scope="col">Descrip.</th>
                 <th scope="col">Precio</th>
-                <th scope="col">Cant.</th>
+                <th scope="col">
+                    + / -
+                </th>
             </tr>
         </thead>
         <tbody>
+            <?php $acum = 0; ?>
             <?php foreach ($this->menus as $me) { ?>
                 <tr>
-                    <th scope="row">1</th>
+                    <th scope="row" id="cantidad<?= $me['id_menu']; ?>">1</th>
                     <td><?= $me['nombre']; ?></td>
                     <td><?= $me['descripcion']; ?></td>
-                    <td>$<?= $me['precio']; ?></td>
+                    <td id="precioParcial<?= $me['id_menu']; ?>"><?= $me['precio']; ?></td>
+                    <input type="hidden" id="precioInicial<?= $me['id_menu']; ?>" value="<?= $me['precio']; ?>">
+                    <td>                        
+                        <div>
+                            <button class="btn btn-xs btn-primary" onclick="sumarCant('<?= $me['id_menu']; ?>')">+</button>
+                            <button class="btn btn-xs btn-primary" onclick="restarCant('<?= $me['id_menu']; ?>')">-</button>
+                        </div>
+                    </td>
                 </tr>
+                <?php $acum += $me['precio']; ?>
             <?php } ?>
-            
+            <th scope="row" class="table-info">#</th>
+            <td class="table-info font-weight-bold">TOTAL</td>
+            <td class="table-info"></td>
+            <td class="table-info"></td>
+            <td class="table-info font-weight-bold" id="precioAcum"><?= $acum ?></td>
         </tbody>
     </table>
     <! -- ANALIZAR FOOTER -->
@@ -90,11 +105,43 @@
 </body>
 <script src="../script.js"></script>
 <script>
-    $(function() {
-        $('.example-popover').popover({
-            container: 'body'
-        })
-    })
+    function sumarCant(id) {
+
+
+        let precioInicial = document.getElementById('precioInicial' + id);
+        precioInicial = parseFloat(precioInicial.value);
+
+        let cantidad = document.getElementById('cantidad' + id);
+        cantidad.textContent = parseInt(cantidad.textContent) + 1;
+
+        let precioParcial = document.getElementById('precioParcial' + id);
+
+        precioParcial.textContent = precioInicial * parseFloat(cantidad.textContent)
+
+        let precioAcumulado = document.getElementById('precioAcum')
+        precioAcumulado.textContent = parseFloat(precioAcumulado.textContent) + precioInicial
+
+    }
+
+    function restarCant(id) {
+
+        let precioInicial = document.getElementById('precioInicial' + id);
+        precioInicial = parseFloat(precioInicial.value);
+
+        let cantidad = document.getElementById('cantidad' + id);
+        if (cantidad.textContent > 1) {
+
+            cantidad.textContent = parseInt(cantidad.textContent) - 1;
+
+            let precioParcial = document.getElementById('precioParcial' + id);
+
+            precioParcial.textContent = precioInicial * parseFloat(cantidad.textContent)
+
+            let precioAcumulado = document.getElementById('precioAcum')
+            precioAcumulado.textContent = parseFloat(precioAcumulado.textContent) - precioInicial
+        }
+
+    }
 </script>
 
 </html>
