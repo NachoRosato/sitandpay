@@ -1,0 +1,11 @@
+# archivo .htaccess
+
+RewriteEngine on
+
+RewriteRule ^usuario-invitado-menu$ controllers/listamenus.php
+
+RewriteRule ^usuario-invitado-pedido$ controllers/listacarrito.php
+
+RewriteRule ^usuario-invitado-pago$ controllers/altapagos.php
+
+RewriteRule ^home$ index.php

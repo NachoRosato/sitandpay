@@ -69,7 +69,7 @@ img {
  	.btn-flotante {
 		font-size: 14px;
 		padding: 12px 20px;
-		bottom: 0px;
+		bottom: 7px;
 		right: 20px;
 	}
 }
@@ -113,7 +113,26 @@ img {
  	.btn-flotante2 {
 		font-size: 14px;
 		padding: 12px 20px;
-		bottom: 0px;
+		bottom: 7px;
 		right: 246px;
 	}
+}
+
+td #botonSumar{
+	
+	padding-top: 0px;
+	padding-bottom: 1px;
+	padding-left: 10px;
+	padding-right: 9px;
+	margin-bottom: 5px;
+	
+}
+
+td #botonRestar{
+	
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 12px;
+	padding-right: 12px;
+	
 }

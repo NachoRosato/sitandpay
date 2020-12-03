@@ -7,8 +7,8 @@
     <title>Sit and Pay</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/popper.min.js">
-    <link rel="stylesheet" href="../css/styleMenu.css">
+    <link rel="stylesheet" href="css/popper.min.js">
+    <link rel="stylesheet" href="css/styleMenu.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -18,12 +18,12 @@
 
 
 <body>
-    <a href="../controllers/altapagos.php" class="btn-flotante">PAGAR</a>
-    <a href="../controllers/listamenus.php" class="btn-flotante2">VOLVER</a>
+    <a href="usuario-invitado-pago" class="btn-flotante">PAGAR</a>
+    <a href="usuario-invitado-menu" class="btn-flotante2">VOLVER</a>
 
     <nav class="navbar navbar-dark bg-dark d-flex">
         <a class="navbar-brand" href="#">
-            <img src="../imgs/sitandpaylogo.png" class="d-inline-block align-top text-right" alt="">
+            <img src="imgs/sitandpaylogo.png" class="d-inline-block align-top text-right" alt="">
         </a>
         <span class="text-white bg-dark">© 2020</span>
     </nav>
@@ -37,13 +37,13 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="../imgs/food1.jpg" class="d-block w-100" alt="..">
+                    <img src="imgs/food1.jpg" class="d-block w-100" alt="..">
                 </div>
                 <div class="carousel-item">
-                    <img src="../imgs/food2.jpg" class="d-block w-100" alt="..">
+                    <img src="imgs/food2.jpg" class="d-block w-100" alt="..">
                 </div>
                 <div class="carousel-item">
-                    <img src="../imgs/food3.jpg" class="d-block w-100 h-10" alt="..">
+                    <img src="imgs/food3.jpg" class="d-block w-100 h-10" alt="..">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -62,7 +62,7 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Nombre</th>
-                <th scope="col">Descrip.</th>
+                <th scope="col">Descripción</th>
                 <th scope="col">Precio</th>
                 <th scope="col">
                     + / -
@@ -78,11 +78,9 @@
                     <td><?= $me['descripcion']; ?></td>
                     <td id="precioParcial<?= $me['id_menu']; ?>"><?= $me['precio']; ?></td>
                     <input type="hidden" id="precioInicial<?= $me['id_menu']; ?>" value="<?= $me['precio']; ?>">
-                    <td>                        
-                        <div>
-                            <button class="btn btn-xs btn-primary" onclick="sumarCant('<?= $me['id_menu']; ?>')">+</button>
-                            <button class="btn btn-xs btn-primary" onclick="restarCant('<?= $me['id_menu']; ?>')">-</button>
-                        </div>
+                    <td>
+                        <button id="botonSumar" class="btn btn-primary font-weight-bold" onclick="sumarCant('<?= $me['id_menu']; ?>')">+</button>
+                        <button id="botonRestar" class="btn btn-primary font-weight-bold" onclick="restarCant('<?= $me['id_menu']; ?>')">-</button>
                     </td>
                 </tr>
                 <?php $acum += $me['precio']; ?>
@@ -103,7 +101,7 @@
 
 
 </body>
-<script src="../script.js"></script>
+<script src="script.js"></script>
 <script>
     function sumarCant(id) {
 

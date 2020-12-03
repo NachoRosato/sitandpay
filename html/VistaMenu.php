@@ -7,8 +7,8 @@
     <title>Sit and Pay</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/popper.min.js">
-    <link rel="stylesheet" href="../css/styleMenu.css">
+    <link rel="stylesheet" href="css/popper.min.js">
+    <link rel="stylesheet" href="css/styleMenu.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -18,11 +18,11 @@
 
 
 <body>
-    <a href="../controllers/listacarrito.php" class="btn-flotante">Ver Pedido</a>
+    <a href="usuario-invitado-pedido" class="btn-flotante">Ver Pedido</a>
 
     <nav class="navbar navbar-dark bg-dark d-flex">
         <a class="navbar-brand" href="#">
-            <img src="../imgs/sitandpaylogo.png" class="d-inline-block align-top text-right" alt="">
+            <img src="imgs/sitandpaylogo.png" class="d-inline-block align-top text-right" alt="">
         </a>
         <span class="text-white bg-dark">© 2020</span>
     </nav>
@@ -36,13 +36,13 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="../imgs/food1.jpg" class="d-block w-100" alt="..">
+                    <img src="imgs/food1.jpg" class="d-block w-100" alt="..">
                 </div>
                 <div class="carousel-item">
-                    <img src="../imgs/food2.jpg" class="d-block w-100" alt="..">
+                    <img src="imgs/food2.jpg" class="d-block w-100" alt="..">
                 </div>
                 <div class="carousel-item">
-                    <img src="../imgs/food3.jpg" class="d-block w-100 h-10" alt="..">
+                    <img src="imgs/food3.jpg" class="d-block w-100 h-10" alt="..">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -129,5 +129,5 @@
 
 
 </body>
-<script src="../script.js"></script>
+<script src="script.js"></script>
 </html>
