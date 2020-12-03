@@ -8,4 +8,6 @@ RewriteRule ^usuario-invitado-pedido$ controllers/listacarrito.php
 
 RewriteRule ^usuario-invitado-pago$ controllers/altapagos.php
 
-RewriteRule ^home$ index.php
+RewriteRule ^home$ indexInvitado.php
+
+RewriteRule ^home-([0-9]{4}[A-Z]{2})$ indexInvitado.php?mesa=$1

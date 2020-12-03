@@ -10,13 +10,15 @@
 
         public function getPedido($lista_pedidos){
 
-            //valido que contenga al menos 1 valor.
-            if(empty($lista_pedidos)) die ("error Menus 1. Vuelva al Home.");
+            //valido que no este vacio.
+            if(empty($lista_pedidos)) throw new ValidacionException ("error Menus 1. Vuelva al Home.");
 
-            //valido que contenga valores numericos.
-            if($lista_pedidos < 1) die ("error Menus 2. No contiene un Pedido en Curso, vuelva al Home!");
+            //valido que contenga al menos 1.
+            if($lista_pedidos < 1) throw new ValidacionException ("error Menus 2. No contiene un Pedido en Curso, vuelva al Home!");                   
 
-            $lista_pedidos = array_unique($lista_pedidos);
+            //me aseguro de tener 1 menu por seleccion.
+            $lista_pedidos = array_unique($lista_pedidos);            
+
             $this->db->query("SELECT * FROM menu");
             $temporal = $this->db->fetchAll();
             $orden = array();
@@ -28,10 +30,11 @@
                     }
                 }              
             }
-            return $orden;
-        }
+            //valido que contenga como max 20 pedidos.
+            if(count($orden) >20) throw new ValidacionException ("error Menus 3. Excede la cantidad de pedidos, vuelva al Home!"); 
 
-        
+            return $orden;
+        }       
 
     //     -- Se utilizo JavaScript--    
     //     public function getTotal($lista_pedidos){
@@ -52,10 +55,5 @@
 
     }
 
-    class ValidacionException extends Exception {
-
-        
-
-
-    }
+    class ValidacionException extends Exception {  }
 ?>

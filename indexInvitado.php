@@ -11,7 +11,17 @@
 
     // Destruyo la Sesion para poder Cerrar y volver al Menu Inicial
     session_destroy();
+    
 
+    
+    if(isset($_GET)){
+
+        session_start();
+        
+         $_SESSION['codigomesa'] = $_GET;
+         
+    }
+    
     header("Location: usuario-invitado-menu");      
     
 ?>

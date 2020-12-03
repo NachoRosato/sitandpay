@@ -1,18 +1,19 @@
 <?php
 //controller/altapagos
 require '../fw/fw.php';
-require '../models/Menus.php';
+require '../models/pagosById.php';
 require '../views/VistaPago.php';
 
 // Se inicia la Sesion Para que mantenga los datos.
 session_start();
 
-$me = new Menus();
-$todos = $me->getPedido($_SESSION["listadepedidos"]);
+$at = new altaPagos();
+
+$fin = $at->insertarPedido($_SESSION["mesaid"],$_SESSION["listadepedidos"]);
 
 
 $v = new VistaPago();
-$v->menus = $todos;
+
 $v->render();
 
 
