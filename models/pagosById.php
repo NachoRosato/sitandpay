@@ -3,14 +3,35 @@
     // consulta a la base para comprobar que Exista la mesa elegida por el usuario
     
     class altaPagos extends Model { 
-        public function insertarPedido($mesaid, $lista_pedidos) {
 
-            return true;
+        public function getTodos(){
+            $this->db->query("SELECT * FROM ordenes");
+            return $this->db->fetchAll();
+         }
 
-            //aca iria la integracion  de mercado Pago y la Query para agregar el Pedido.
-        }
+
+        // Corresponden a la Construccion del Pago
+
+        // public function insertarPedido($mesaid, $lista_pedidos) {
+
+            
+        //     //aca iria la integracion  de mercado Pago y la Query para agregar el Pedido.           
+
+        //     // if(pagoOK){
+
+
+        //     // }else{
+
+        //     //     pagoOk = false
+        //     // }
+
+        //     // return pagoOK;
+
+      
+        //     return true;
+        // }
 
     }
 
-    class ValidacionMesa extends Exception {  }
+    class ValidacionPagos extends Exception {  }
 ?>

@@ -1,138 +1,131 @@
-
 html {
-	min-height: 100%;
-	position: relative;
-  }
-  body {
-	margin: 0;
-	margin-bottom: 40px;
-  }
-  footer {
-	background-color:#343a40!important;
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	height: 45px;
-	color: #ffffff;
-	text-align: center;
-	vertical-align: middle;
-  }
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  margin: 0;
+  margin-bottom: 40px;
+}
+
+footer {
+  background-color: #343a40 !important;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 45px;
+  color: #ffffff;
+  text-align: center;
+  vertical-align: middle;
+}
 
 img {
-    float: left;
-    width:  200px;
-    height: 200px;
-    object-fit: cover;
+  float: left;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
 }
 
 .navbar img {
-	width: 75px;
-	height: 50px;
+  width: 75px;
+  height: 50px;
 }
 
-
 #swiper-menus {
-    width: 90%;
-    height: 370px;
+  width: 90%;
+  height: 370px;
 }
 
 #publi img {
-
-	height: 120px;
-
+  height: 120px;
 }
 
 .btn-flotante {
-	font-size: 16px; /* Cambiar el tamaño de la tipografia */
-	text-transform: uppercase; /* Texto en mayusculas */
-	font-weight: bold; /* Fuente en negrita o bold */
-	color: #ffffff; /* Color del texto */
-	border-radius: 5px; /* Borde del boton */
-	letter-spacing: 2px; /* Espacio entre letras */
-	background-color: #0fabb1; /* Color de fondo */
-	padding: 18px 30px; /* Relleno del boton */
-	position: fixed;
-	bottom: 40px;
-	right: 40px;
-	transition: all 300ms ease 0ms;
-	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-	z-index: 99;
+  font-size: 16px; /* Cambiar el tamaño de la tipografia */
+  text-transform: uppercase; /* Texto en mayusculas */
+  font-weight: bold; /* Fuente en negrita o bold */
+  color: #ffffff; /* Color del texto */
+  border-radius: 5px; /* Borde del boton */
+  letter-spacing: 2px; /* Espacio entre letras */
+  background-color: #0fabb1; /* Color de fondo */
+  padding: 18px 30px; /* Relleno del boton */
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  transition: all 300ms ease 0ms;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  z-index: 99;
 }
 
 .btn-flotante:hover {
-	background-color: #2c2fa5; /* Color de fondo al pasar el cursor */
-	box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
-	transform: translateY(-7px);
+  background-color: #2c2fa5; /* Color de fondo al pasar el cursor */
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-7px);
 }
 
 @media only screen and (max-width: 600px) {
- 	.btn-flotante {
-		font-size: 14px;
-		padding: 12px 20px;
-		bottom: 7px;
-		right: 20px;
-	}
+  .btn-flotante {
+    font-size: 14px;
+    padding: 12px 20px;
+    bottom: 7px;
+    right: 20px;
+  }
 }
 
 .form-control-plaintext {
-	margin-right: -24px;
-	margin-left: 10px;
-	height: 40px;
-	width: 160px;
+  margin-right: -24px;
+  margin-left: 10px;
+  height: 40px;
+  width: 160px;
 }
 
-
-.form-control-plaintext #precio{
-	margin-left: 160px;
+.form-control-plaintext #precio {
+  margin-left: 160px;
 }
 
 .btn-flotante2 {
-	font-size: 16px; /* Cambiar el tamaño de la tipografia */
-	text-transform: uppercase; /* Texto en mayusculas */
-	font-weight: bold; /* Fuente en negrita o bold */
-	color: #ffffff; /* Color del texto */
-	border-radius: 5px; /* Borde del boton */
-	letter-spacing: 2px; /* Espacio entre letras */
-	background-color: #0fabb1; /* Color de fondo */
-	padding: 18px 30px; /* Relleno del boton */
-	position: fixed;
-	bottom: 40px;
-	right: 40px;
-	transition: all 300ms ease 0ms;
-	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-	z-index: 99;
+  font-size: 16px; /* Cambiar el tamaño de la tipografia */
+  text-transform: uppercase; /* Texto en mayusculas */
+  font-weight: bold; /* Fuente en negrita o bold */
+  color: #ffffff; /* Color del texto */
+  border-radius: 5px; /* Borde del boton */
+  letter-spacing: 2px; /* Espacio entre letras */
+  background-color: #0fabb1; /* Color de fondo */
+  padding: 18px 30px; /* Relleno del boton */
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  transition: all 300ms ease 0ms;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  z-index: 99;
 }
 
 .btn-flotante2:hover {
-	background-color: #2c2fa5; /* Color de fondo al pasar el cursor */
-	box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
-	transform: translateY(-7px);
+  background-color: #2c2fa5; /* Color de fondo al pasar el cursor */
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-7px);
 }
 
 @media only screen and (max-width: 600px) {
- 	.btn-flotante2 {
-		font-size: 14px;
-		padding: 12px 20px;
-		bottom: 7px;
-		right: 246px;
-	}
+  .btn-flotante2 {
+    font-size: 14px;
+    padding: 12px 20px;
+    bottom: 7px;
+    right: 252px;
+  }
 }
 
-td #botonSumar{
-	
-	padding-top: 0px;
-	padding-bottom: 1px;
-	padding-left: 10px;
-	padding-right: 9px;
-	margin-bottom: 5px;
-	
+td #botonSumar {
+  padding-top: 0px;
+  padding-bottom: 1px;
+  padding-left: 10px;
+  padding-right: 9px;
+  margin-bottom: 5px;
 }
 
-td #botonRestar{
-	
-	padding-top: 2px;
-	padding-bottom: 2px;
-	padding-left: 12px;
-	padding-right: 12px;
-	
+td #botonRestar {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 12px;
+  padding-right: 12px;
 }

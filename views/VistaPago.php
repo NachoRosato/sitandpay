@@ -1,7 +1,7 @@
 <?php
 
-class VistaPago extends View {
-    public $menus; 
+class VistaPago extends View {    
+    public $ordenes;
     }
 
 ?>

@@ -29,11 +29,11 @@
     </nav>
 
     <div class="container-fluid" id="publi">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
             <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -46,18 +46,41 @@
                     <img src="imgs/food3.jpg" class="d-block w-100 h-10" alt="..">
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
             </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
         </div>
     </div>
     <h1>Se realizo un Pago de manera Exitosa!</h1>
-    
+
+    <div>
+        <p>MESA <?= $_SESSION["mesaid"]; ?> su orden se encuentra... ESTADO:<?php foreach ($this->ordenes as $o) { ?> </p>
+
+        <?php if ($_SESSION["mesaid"] == $o['id_mesa'] && $o['estado'] == 0) { ?>
+
+            <input type="text" readonly class="form-control-plaintext font-weight-bold" id="estado" value="EN PREPARACION">
+
+        <?php } ?>
+        <?php if ($_SESSION["mesaid"] == $o['id_mesa'] && $o['estado'] == 1) { ?>
+
+            <input type="text" readonly class="form-control-plaintext font-weight-bold" id="estado" value="EN CURSO HACIA LA MESA">
+
+        <?php } ?>
+        <?php if ($_SESSION["mesaid"] == $o['id_mesa'] && $o['estado'] == 3) { ?>
+
+            <input type="text" readonly class="form-control-plaintext font-weight-bold" id="estado" value="CERRADO">
+
+        <?php } ?>
+
+    <?php } ?>
+
+    </div>
+
     <! -- ANALIZAR FOOTER -->
         <div>
             <footer>
@@ -65,7 +88,6 @@
             </footer>
         </div>
 
-
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 </body>
-<script src="script.js"></script>
 </html>

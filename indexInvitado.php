@@ -1,27 +1,20 @@
 <?php 
-    //Elimno las Cookies de Sesion
 
-    if (ini_get("session.use_cookies")) {
-        $params = session_get_cookie_params();
-        setcookie(session_name(), '', time() - 42000,
-            $params["path"], $params["domain"],
-            $params["secure"], $params["httponly"]
-        );
-    }
+session_start(); 
+session_destroy();
+session_unset();
 
-    // Destruyo la Sesion para poder Cerrar y volver al Menu Inicial
-    session_destroy();
+
+//si existe el codigo lo guardo
+
+if(isset($_GET['mesa'])){
+
+    session_start();
     
-
-    
-    if(isset($_GET)){
-
-        session_start();
+        $_SESSION["codigomesa"] = $_GET['mesa'];
         
-         $_SESSION['codigomesa'] = $_GET;
-         
-    }
-    
-    header("Location: usuario-invitado-menu");      
-    
+}
+
+    header("Location: usuario-invitado-menu");
+
 ?>
